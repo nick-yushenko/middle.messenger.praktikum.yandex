@@ -1,0 +1,13 @@
+<div class="auth">
+
+    <form action="#">
+        {{> title/h2 text=title class="center"}}
+
+        {{> @partial-block}}
+
+        <div class="actions">
+            {{> button/button submit=true class="fluid" text=primaryBtn}}
+            {{> button/button href=link class="light fliud" text=secondaryBtn}}
+        </div>
+    </form>
+</div>

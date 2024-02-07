@@ -1,0 +1,15 @@
+{{#> layouts/page title="Log in" }}
+
+    {{#scroll className="padding center"}}
+        {{#> auth/auth title="Регистрация" primaryBtn="Создать аккаунт" secondaryBtn="Уже есть аккаунт" link="/pages/login/"}}
+
+            {{>input/input type="text" hint="Имя" name="first_name"}}
+            {{>input/input type="text" hint="Фамилия" name="second_name"}}
+            {{>input/input type="text" hint="Логин" name="login"}}
+            {{>input/input type="email" hint="E-mail" name="email"}}
+            {{>input/input type="password" hint="Пароль" name="password"}}
+            {{>input/input type="text" hint="Телефон" name="phone"}}
+        {{/auth/auth}}
+    {{/scroll}}
+
+{{/ layouts/page}}

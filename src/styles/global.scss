@@ -1,0 +1,19 @@
+@import 'normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+@import "src/partials/title/title";
+@import "src/partials/button/button";
+@import "src/partials/input/input";
+@import "src/partials/errorPage/errorPage";
+@import "src/partials/auth/auth";
+
