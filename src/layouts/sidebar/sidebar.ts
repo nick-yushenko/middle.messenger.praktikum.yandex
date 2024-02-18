@@ -1,10 +1,9 @@
 import { HelperOptions } from 'handlebars';
 
+// TODO пока что не используется - весь сайдбар в partials
 export default function sidebar(this: object, { fn }: HelperOptions): string {
-    console.log(this)
+
     return `
-    <div class="sidebar">
-        ${fn(this)}
-    </div>
+     ${fn(this)}
     `
 }
