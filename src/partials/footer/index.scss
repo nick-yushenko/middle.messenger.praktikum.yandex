@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-evenly;
 
-  border-top: 1px solid var(--ghost);
+  border-top: 1px solid var(--border);
 
 
   &-icon {
@@ -19,6 +19,7 @@
     opacity: 1;
     transition: var(--transition);
 
+    text-decoration: none;
     cursor: pointer;
 
     div {
@@ -30,7 +31,6 @@
       border-radius: 6px;
       background-color: var(--white);
       transition: var(--transition);
-      box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1);
 
     }
 
@@ -53,7 +53,8 @@
 
       div {
         transition: var(--transition);
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow);
+
       }
 
       span {

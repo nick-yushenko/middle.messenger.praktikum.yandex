@@ -9,6 +9,7 @@ import {resolve, dirname} from 'path';
 import error from "./src/layouts/error/error"
 import scroll from "./src/layouts/scroll/scroll"
 import app from "./src/layouts/app/app"
+import profile from "./src/layouts/profile/profile"
 import sidebar from "./src/layouts/sidebar/sidebar"
 import messenger from "./src/layouts/messenger/messenger"
 
@@ -27,6 +28,7 @@ export default defineConfig({
     partialDirectory: resolve(__dirname, "src/partials"),
     helpers: {
       app,
+      profile,
       error,
       scroll,
       sidebar,
@@ -62,6 +64,7 @@ export default defineConfig({
         signup: resolve(__dirname, "src/pages/signup/index.html"),
 
         app: resolve(__dirname, "src/pages/app/index.html"),
+        profile: resolve(__dirname, "src/pages/profile/index.html"),
       }
     }
   },
