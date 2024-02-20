@@ -1,0 +1,27 @@
+@import 'normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1000px #fff inset !important;
+}
+
+@import "src/partials/title/title";
+@import "src/partials/button/button";
+@import "src/partials/input/input";
+@import "src/partials/search/";
+@import "src/partials/errorPage/errorPage";
+@import "src/partials/auth/auth";
+@import "src/partials/footer/";
+
+@import "src/partials/sidebar/";
+@import "src/partials/messenger/";
+
