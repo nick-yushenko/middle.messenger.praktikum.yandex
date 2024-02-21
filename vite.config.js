@@ -65,6 +65,8 @@ export default defineConfig({
 
         app: resolve(__dirname, "src/pages/app/index.html"),
         profile: resolve(__dirname, "src/pages/profile/index.html"),
+        editProfile: resolve(__dirname, "src/pages/editProfile/index.html"),
+        editPassword: resolve(__dirname, "src/pages/editPassword/index.html"),
       }
     }
   },
