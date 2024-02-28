@@ -8,7 +8,6 @@
 
   border-top: 1px solid var(--border);
 
-
   &-icon {
     display: flex;
     align-items: center;
@@ -31,7 +30,6 @@
       border-radius: 6px;
       background-color: var(--white);
       transition: var(--transition);
-
     }
 
     span {
@@ -39,7 +37,6 @@
       line-height: 1;
       color: var(--text_ghost);
       transition: var(--transition);
-
     }
 
     &:hover,
@@ -54,7 +51,6 @@
       div {
         transition: var(--transition);
         box-shadow: var(--shadow);
-
       }
 
       span {
@@ -62,7 +58,5 @@
         color: var(--primary);
       }
     }
-
   }
 }
-

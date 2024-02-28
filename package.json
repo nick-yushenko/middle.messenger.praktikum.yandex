@@ -6,16 +6,28 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite build && node src/js/server.js"
+    "start": "vite build && node src/js/server.js",
+    "prettier": "prettier --write 'src/**/*.{js,ts,css,scss}' ",
+    "lint": "eslint .",
+    "lint:styles": "stylelint 'src/**/*.{css,scss}'"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
     "vite-plugin-svg-sprite": "^0.5.1"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "express": "^4.18.2",
     "handlebars": "^4.7.8",
+    "prettier": "^3.2.5",
     "sass": "^1.69.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-scss": "^6.1.0",
     "typescript": "^5.2.2",
     "vite": "^4.4.5",
     "vite-plugin-handlebars": "^1.6.0"

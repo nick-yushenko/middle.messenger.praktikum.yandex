@@ -1,4 +1,3 @@
-node_modules
-src/assets
-dist
-build
+/dist
+**/*.min.js
+/node_modules

@@ -1,9 +1,9 @@
-import { HelperOptions } from 'handlebars';
+import { HelperOptions } from "handlebars";
 
 export default function app(this: object, { fn }: HelperOptions): string {
-    return `
+  return `
     <main class="app">
         ${fn(this)}
     </main>
-    `
+    `;
 }

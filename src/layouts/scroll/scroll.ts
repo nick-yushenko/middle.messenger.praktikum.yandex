@@ -1,9 +1,9 @@
-import { HelperOptions } from 'handlebars';
+import { HelperOptions } from "handlebars";
 
 export default function scroll(this: object, { fn, hash }: HelperOptions): string {
-    return `
+  return `
     <div class="scrollable ${hash.className}">
         ${fn(this)}
     </div>
-    `
+    `;
 }

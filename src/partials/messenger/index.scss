@@ -59,7 +59,8 @@
     transition: var(--transition);
 
     cursor: pointer;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       transition: var(--transition);
       background-color: var(--primary_hover);
     }
@@ -72,7 +73,6 @@
     input {
       display: none;
     }
-
   }
 }
 
@@ -90,8 +90,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: #EFEFEF;
-
+    background-color: #efefef;
   }
 
   h1 {
@@ -103,10 +102,9 @@
   span {
     font-size: 14px;
     line-height: 1;
-    color: var(--text_ghost)
+    color: var(--text_ghost);
   }
 }
-
 
 .profile {
   overflow-y: auto;
@@ -128,13 +126,13 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: #EFEFEF;
+    background-color: #efefef;
     margin: 0 auto;
 
     overflow: hidden;
 
-
-    .placeholder, img {
+    .placeholder,
+    img {
       position: absolute;
       top: 0;
       left: 0;
@@ -166,10 +164,10 @@
     }
 
     &:hover {
-     .change {
-       opacity: 1;
-       transition: var(--transition);
-     }
+      .change {
+        opacity: 1;
+        transition: var(--transition);
+      }
     }
   }
 
@@ -191,7 +189,6 @@
     border-radius: 16px;
     box-shadow: var(--shadow);
 
-
     &.editable {
       display: flex;
       flex-direction: column;
@@ -209,7 +206,8 @@
         border-bottom: 1px solid var(--border);
       }
 
-      .hint, .value {
+      .hint,
+      .value {
         font-size: 16px;
         line-height: 18px;
       }
