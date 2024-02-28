@@ -1,0 +1,35 @@
+<div class="messenger profile">
+
+    <form class="profile-info">
+
+        <label class="avatar">
+            {{>input/input avatar=true type="file" name="avatar" tabIndex="-1" }}
+
+            <div class="placeholder">
+                {{>icon/icon name="img-icon" width=40 height=40  }}
+
+            </div>
+
+            <span class="change">
+                Поменять <br> аватар
+            </span>
+        </label>
+        <span class="username">Джон Уик</span>
+
+        <div class="profile-data editable">
+            {{>input/input type="email" hint="Почта" name="email" tabIndex="1" value="pochta@yandex.ru" }}
+            {{>input/input type="text" hint="логин" name="login" tabIndex="2" value="ivanivanov" }}
+            {{>input/input type="text" hint="Имя" name="first_name" tabIndex="3" value="Джон" }}
+            {{>input/input type="text" hint="Фамилия" name="second_name" tabIndex="4" value="Уик" }}
+            {{>input/input type="text" hint="Имя в чате" name="display_name" tabIndex="5" value="Иван" }}
+            {{>input/input type="tel" hint="Телефон" name="phone" tabIndex="6" value="+7 (999) 999 99-99" }}
+        </div>
+
+        <div class="profile-actions">
+            {{> button/button submit=true class="fluid" text="Сохранить"}}
+
+
+        </div>
+    </form>
+
+</div>

@@ -1,13 +1,48 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <style>
+        html, body, nav {
+            height: 100%;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        a {
+            text-decoration: none;
+            color: #000000;
+            transition: 0.3s;
+            font-size: 20px;
+
+        }
+
+        a:hover {
+            transition: 0.3s;
+            color: #4C9562;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <h1>Список страниц приложения</h1>
+    <a href="/src/pages/app/index.html">Chat</a>
+    <a href="/src/pages/profile/index.html">Profile</a>
+    <a href="/src/pages/editProfile/index.html">EditProfile</a>
+    <a href="/src/pages/editPassword/index.html">EditPassword</a>
+    <a href="/src/pages/login/index.html">Login</a>
+    <a href="/src/pages/signup/index.html">Sign up</a>
+    <a href="/src/pages/error/404/index.html">404 page</a>
+    <a href="/src/pages/error/500/index.html">5** page</a>
+</nav>
+</body>
 </html>

@@ -1,0 +1,50 @@
+.btn {
+  border:none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 20px;
+
+  min-height: 40px;
+
+  text-decoration: none;
+
+  background-color: var(--primary);
+  border-radius: 8px;
+
+  color: var(--white);
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: var(--transition);
+
+  &.fluid {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: var(--primary_hover);
+  }
+  &:active {
+    background-color: var(--primary_active);
+  }
+
+  &.light {
+    padding: 0 10px;
+
+    min-height: 20px;
+
+    background-color: transparent;
+    color: var(--primary);
+
+    &:hover {
+      color: var(--primary_hover);
+    }
+    &:active {
+      color: var(--primary_active);
+    }
+  }
+}
