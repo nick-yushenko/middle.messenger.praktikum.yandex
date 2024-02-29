@@ -5,6 +5,8 @@ import "@/layouts/messenger/style.scss";
 import "@/layouts/sidebar/style.scss";
 
 import initInputs from "./input";
+import initTooltips from "./tooltip";
 import "@/assets/icons/index";
 
 initInputs();
+initTooltips();

@@ -19,13 +19,13 @@
 
   "rules": {
     "no-unused-vars": "off",
-    "no-extra-semi": "error"
-//    "prettier/prettier": [
-//      "error",
-//      {
-//        "endOfLine": "auto",
-//        "printWidth": 80
-//      }
-//    ]
+    "no-extra-semi": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "printWidth": 80
+      }
+    ]
   }
 }
