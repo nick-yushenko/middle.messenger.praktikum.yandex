@@ -1,3 +1,3 @@
 export const mockData = {
-  test: 123
-}
+  test: 123,
+};

@@ -2,10 +2,7 @@
 import Handlebars from "handlebars";
 import { HelperOptions } from "handlebars";
 import Component from "./component";
-export function registerComponent<Props extends Record<string, any>>(
-  name: string,
-  Element: new (props: Props) => Component<Props>
-) {
+export function registerComponent<Props extends Record<string, any>>(name: string, Element: new (props: Props) => Component<Props>) {
   if (name in Handlebars.helpers) {
     throw `Компонент ${name} ранее был зарегистрирован`;
   }

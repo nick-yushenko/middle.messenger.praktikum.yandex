@@ -31,7 +31,7 @@ export const renderDOM = (name: keyof typeof ROUTES, query: string = "#root") =>
   const Page = ROUTES[name];
   const page = new Page();
 
-  console.log(page)
+  console.log(page);
   root.append(page.getContent()!);
 
   page.dispatchComponentDidMount();
