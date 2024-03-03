@@ -4,18 +4,12 @@
     "module": "esnext",
     "moduleResolution": "node",
 
-    "sourceMap": true,
     "noEmit": true,
 
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
     "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
 
     "skipLibCheck": true,
     "allowJs": true,
