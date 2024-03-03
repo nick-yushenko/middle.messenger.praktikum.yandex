@@ -36,3 +36,5 @@ const isEmpty = (value: any) => {
 
   return false;
 };
+
+export default isEmpty;
