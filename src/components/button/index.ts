@@ -24,7 +24,7 @@ export class Button extends Component {
   }
 
   render() {
-    console.log(this.props.type)
+    console.log(this.props.type);
     return this.compile(template, this.props);
   }
 }

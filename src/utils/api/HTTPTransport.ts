@@ -31,22 +31,34 @@ type OptionsWithoutMethod = Omit<Options, "method">;
 // type OptionsWithoutMethod = { data?: any };
 
 export class HTTPTransport {
-  get(url: string, options: OptionsWithoutMethod = {} as OptionsWithoutMethod): Promise<XMLHttpRequest> {
+  get(
+    url: string,
+    options: OptionsWithoutMethod = {} as OptionsWithoutMethod
+  ): Promise<XMLHttpRequest> {
     if (options.data) {
       url += queryStringify(options.data);
     }
     return this.request(url, { ...options, method: METHODS.GET });
   }
 
-  put(url: string, options: OptionsWithoutMethod = {} as OptionsWithoutMethod): Promise<XMLHttpRequest> {
+  put(
+    url: string,
+    options: OptionsWithoutMethod = {} as OptionsWithoutMethod
+  ): Promise<XMLHttpRequest> {
     return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
   }
 
-  post(url: string, options: OptionsWithoutMethod = {} as OptionsWithoutMethod): Promise<XMLHttpRequest> {
+  post(
+    url: string,
+    options: OptionsWithoutMethod = {} as OptionsWithoutMethod
+  ): Promise<XMLHttpRequest> {
     return this.request(url, { ...options, method: METHODS.POST }, options.timeout);
   }
 
-  delete(url: string, options: OptionsWithoutMethod = {} as OptionsWithoutMethod): Promise<XMLHttpRequest> {
+  delete(
+    url: string,
+    options: OptionsWithoutMethod = {} as OptionsWithoutMethod
+  ): Promise<XMLHttpRequest> {
     return this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
   }
 

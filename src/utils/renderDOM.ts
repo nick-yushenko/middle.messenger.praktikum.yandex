@@ -1,7 +1,7 @@
 import Home from "../_pages/Home";
 import Component from "./component";
 import { Login } from "../_pages/Login";
-import {SignUp} from "../_pages/SignUp";
+import { SignUp } from "../_pages/SignUp";
 
 type TRoutes = Record<string, new (...args: any[]) => Component<any>>;
 

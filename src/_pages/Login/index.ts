@@ -3,7 +3,7 @@ import "./style.scss";
 import Component from "../../utils/component";
 // import { renderDOM } from "../../utils/renderDOM";
 import { blurValidation, submitValidation } from "../../utils/validation";
-import {renderDOM} from "../../utils/renderDOM";
+import { renderDOM } from "../../utils/renderDOM";
 
 export class Login extends Component {
   constructor() {
