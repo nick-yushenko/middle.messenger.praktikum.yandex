@@ -90,9 +90,7 @@ class Component<Props extends Record<string, any> = any> {
     });
   }
 
-  // чтобы не ругалась IDE на нигде не используемые параметры
-  // @ts-ignore
-  public componentDidMount(oldProps?: Props) {}
+  public componentDidMount(_oldProps?: Props) {}
 
   public dispatchComponentDidMount() {
     this._eventBus?.().emit(Component.EVENTS.FLOW_CDM);
@@ -108,9 +106,7 @@ class Component<Props extends Record<string, any> = any> {
     this._eventBus?.().emit(Component.EVENTS.FLOW_RENDER);
   }
 
-  // чтобы не ругалась IDE на нигде не используемые параметры
-  // @ts-ignore
-  public componentDidUpdate(oldProps: Props, newProps: Props) {
+  public componentDidUpdate(_oldProps: Props, _newProps: Props) {
     // Метод будет вызван непосредственно перед ререндером при изменении компонента
     // Здесь можно добавить пользовательскую логику обновления компонента
     // Например, проверка изменения конкретных свойств и выполнение дополнительных действий

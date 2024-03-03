@@ -66,8 +66,6 @@ export class SignUp extends Component {
   }
 
   render() {
-    console.log(this._getChildrenAndProps(this.props));
-
     return this.compile(template, this.props);
   }
 }

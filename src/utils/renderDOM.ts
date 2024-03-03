@@ -2,6 +2,9 @@ import Home from "../_pages/Home";
 import Component from "./component";
 import { Login } from "../_pages/Login";
 import { SignUp } from "../_pages/SignUp";
+import Page404 from "../_pages/Page404";
+import Page500 from "../_pages/Page500";
+import Chat from "../_pages/Chat";
 
 type TRoutes = Record<string, new (...args: any[]) => Component<any>>;
 
@@ -12,11 +15,11 @@ export const ROUTES: TRoutes = {
   // Другие маршруты
   // signup: SignUp,
   // profile: Profile,
-  // chat: ChatPage,
+  chat: Chat,
   // settings: Settings,
   // password: PasswordChange,
-  // page500: Page500,
-  // page404: Page404,
+  page500: Page500,
+  page404: Page404,
 };
 
 export const renderDOM = (

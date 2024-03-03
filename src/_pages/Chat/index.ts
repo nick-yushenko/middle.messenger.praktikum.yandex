@@ -1,19 +1,14 @@
 import Component from "../../utils/component";
 
-import template from "./template.hbs";
-
 import "./style.scss";
 
-type TProps = {
-  onChange: (val: Event) => void;
-};
+import template from "./template.hbs";
+import { renderDOM } from "../../utils/renderDOM";
 
-export class Search extends Component {
+export default class Chat extends Component {
   constructor() {
-
-    super({ });
+    super({});
   }
-
   render() {
     return this.compile(template, this.props);
   }

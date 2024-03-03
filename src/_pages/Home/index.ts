@@ -1,6 +1,6 @@
 import Component from "../../utils/component";
 
-import "./style.module.scss";
+import "./style.scss";
 
 import template from "./template.hbs";
 import { renderDOM } from "../../utils/renderDOM";
@@ -34,21 +34,21 @@ export default class Home extends Component {
       //     render('password')
       //   },
       // },
-      // chat: {
-      //   onClick: () => {
-      //     render('chat')
-      //   },
-      // },
-      // page404: {
-      //   onClick: () => {
-      //     render('page404')
-      //   },
-      // },
-      // page500: {
-      //   onClick: () => {
-      //     render('page500')
-      //   },
-      // },
+      chat: {
+        onClick: () => {
+          renderDOM("chat");
+        },
+      },
+      page404: {
+        onClick: () => {
+          renderDOM("page404");
+        },
+      },
+      page500: {
+        onClick: () => {
+          renderDOM("page500");
+        },
+      },
     });
   }
   render() {

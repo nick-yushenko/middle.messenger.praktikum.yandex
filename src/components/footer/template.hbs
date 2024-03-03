@@ -1,0 +1,13 @@
+<div class="footer">
+  {{#each actions}}
+
+    <div class="footer-icon" onclick={{this.click}}>
+      <div>
+        {{{Icon name=this.icon width=16 height=16 }}}
+      </div>
+      <span>{{this.name}}</span>
+    </div>
+
+  {{/each}}
+
+</div>
