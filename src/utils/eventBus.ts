@@ -20,11 +20,14 @@ export class EventBus {
     if (!this.listeners[event]) {
       throw new Error(`Событие ${event} не существует`);
     }
-    this.listeners[event] = this.listeners[event].filter(listener => listener !== callback);
+    this.listeners[event] = this.listeners[event].filter(
+      listener => listener !== callback
+    );
   }
 
   emit(event: string, ...args: unknown[]) {
-    if (!this.listeners[event]) throw new Error(`Событие ${event} не существует`);
+    if (!this.listeners[event])
+      throw new Error(`Событие ${event} не существует`);
 
     this.listeners[event].forEach(listener => {
       if (typeof listener === "function") {

@@ -8,7 +8,13 @@ enum METHODS {
 
 type TMode = "same-origin" | "no-cors" | "cors";
 type TCredentials = "omit" | "same-origin" | "include";
-type TCache = "default" | "no-store" | "reload" | "no-cache" | "force-cache" | "only-if-cached";
+type TCache =
+  | "default"
+  | "no-store"
+  | "reload"
+  | "no-cache"
+  | "force-cache"
+  | "only-if-cached";
 type THeaders = {
   [key: string]: string;
 };
@@ -45,24 +51,40 @@ export class HTTPTransport {
     url: string,
     options: OptionsWithoutMethod = {} as OptionsWithoutMethod
   ): Promise<XMLHttpRequest> {
-    return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
+    return this.request(
+      url,
+      { ...options, method: METHODS.PUT },
+      options.timeout
+    );
   }
 
   post(
     url: string,
     options: OptionsWithoutMethod = {} as OptionsWithoutMethod
   ): Promise<XMLHttpRequest> {
-    return this.request(url, { ...options, method: METHODS.POST }, options.timeout);
+    return this.request(
+      url,
+      { ...options, method: METHODS.POST },
+      options.timeout
+    );
   }
 
   delete(
     url: string,
     options: OptionsWithoutMethod = {} as OptionsWithoutMethod
   ): Promise<XMLHttpRequest> {
-    return this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
+    return this.request(
+      url,
+      { ...options, method: METHODS.DELETE },
+      options.timeout
+    );
   }
 
-  request(url: string, options: Options, timeout: number = 5000): Promise<XMLHttpRequest> {
+  request(
+    url: string,
+    options: Options,
+    timeout: number = 5000
+  ): Promise<XMLHttpRequest> {
     const { method, data, headers = {} } = options;
 
     return new Promise((resolve, reject) => {

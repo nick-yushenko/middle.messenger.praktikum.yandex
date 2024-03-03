@@ -29,20 +29,33 @@ export class Input extends Component {
       ...props,
       events: {
         blur: () => {
-          this.setProps({ className: removeClass(this.props.className, Input.CLASSES.focused) });
+          this.setProps({
+            className: removeClass(this.props.className, Input.CLASSES.focused),
+          });
 
           props.onBlur?.();
         },
         focus: () => {
-          this.setProps({ className: classNames(this.props.className, Input.CLASSES.focused) });
+          this.setProps({
+            className: classNames(this.props.className, Input.CLASSES.focused),
+          });
 
           props.onFocus?.();
         },
         change: (e: Event) => {
           const inputValue = (e.target as HTMLInputElement).value;
           console.log(inputValue);
-          if (inputValue.length === 0) this.setProps({ className: removeClass(this.props.className, Input.CLASSES.filled) });
-          else this.setProps({ className: classNames(this.props.className, Input.CLASSES.filled) });
+          if (inputValue.length === 0)
+            this.setProps({
+              className: removeClass(
+                this.props.className,
+                Input.CLASSES.filled
+              ),
+            });
+          else
+            this.setProps({
+              className: classNames(this.props.className, Input.CLASSES.filled),
+            });
           props.onChange?.();
         },
       },

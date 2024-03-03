@@ -19,7 +19,10 @@ export const ROUTES: TRoutes = {
   // page404: Page404,
 };
 
-export const renderDOM = (name: keyof typeof ROUTES, query: string = "#root") => {
+export const renderDOM = (
+  name: keyof typeof ROUTES,
+  query: string = "#root"
+) => {
   const root = document.querySelector(query);
 
   if (!root) {

@@ -26,7 +26,10 @@ export const classNames = (...args: (ClassValue | undefined)[]): string => {
   return classes.join(" ");
 };
 
-export const removeClass = (originalClasses: string | undefined, ...classesToRemove: string[]): string => {
+export const removeClass = (
+  originalClasses: string | undefined,
+  ...classesToRemove: string[]
+): string => {
   if (originalClasses === undefined) {
     return "";
   }
