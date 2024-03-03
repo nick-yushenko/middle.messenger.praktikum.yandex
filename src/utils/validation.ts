@@ -30,7 +30,8 @@ export function blurValidation(e: any) {
   if (e.target.tagName === "INPUT") {
     if (validation(e.target.name, e.target.value)) {
       e.target.classList.remove("invalid");
-      if (e.target.parentNode.querySelector(".error_message")) e.target.parentNode.querySelector(".error_message").remove();
+      if (e.target.parentNode.querySelector(".error_message"))
+        e.target.parentNode.querySelector(".error_message").remove();
     } else {
       const span = document.createElement("span");
       span.className = "error_message";
@@ -56,7 +57,10 @@ export function submitValidation(e: any) {
 
     if (isValid) {
       const passwords = document.querySelectorAll("[name=password]");
-      if (passwords.length > 1 && (passwords[0] as HTMLInputElement).value != (passwords[1] as HTMLInputElement).value) {
+      if (
+        passwords.length > 1 &&
+        (passwords[0] as HTMLInputElement).value != (passwords[1] as HTMLInputElement).value
+      ) {
         (passwords[1] as HTMLInputElement).classList.add("invalid");
         console.log("Пароль не совпадает");
         return;

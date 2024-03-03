@@ -31,6 +31,8 @@ class Component<Props extends Record<string, any> = any> {
    */
   // constructor(tag: string = "div", propsAndChildren: Props = {} as Props) {
   constructor(propsAndChildren: Props = {} as Props) {
+    this.id = makeUUID();
+
     const { children, props } = this._getChildrenAndProps(propsAndChildren);
 
     const eventBus = new EventBus();
@@ -42,8 +44,6 @@ class Component<Props extends Record<string, any> = any> {
     //   props,
     // };
 
-    this.id = makeUUID();
-
     this.props = this._makePropsProxy(props);
 
     this._eventBus = () => eventBus;
@@ -52,7 +52,7 @@ class Component<Props extends Record<string, any> = any> {
     eventBus.emit(Component.EVENTS.INIT);
   }
 
-  private _getChildrenAndProps(propsAndChildren: Props) {
+  public _getChildrenAndProps(propsAndChildren: Props) {
     const children: Record<string, Component> = {};
     const props: Record<string, unknown> = {};
 
@@ -138,7 +138,6 @@ class Component<Props extends Record<string, any> = any> {
     if (this._element) {
       this._element.replaceWith(newElement);
     } else {
-      console.error("нет блока для _render");
       // TODO протестить
       // this._element = new HTMLElement();
       // this._element.replaceWith(newElement);

@@ -5,13 +5,13 @@ import { Button } from "./components/button";
 import { Title } from "./components/title";
 import { Link } from "./components/link";
 import { Scroll } from "./components/scroll";
-import { Auth } from "./components/auth";
+import { Input } from "./components/input";
 
 registerComponent("Button", Button);
+registerComponent("Input", Input);
 registerComponent("Scroll", Scroll);
 registerComponent("Link", Link);
 registerComponent("Title", Title);
-registerComponent("Auth", Auth);
 
 window.addEventListener("DOMContentLoaded", () => {
   renderDOM("home");

@@ -14,11 +14,11 @@ export default class Home extends Component {
           renderDOM("login");
         },
       },
-      // signup: {
-      //   onClick: () => {
-      //     render('signup')
-      //   },
-      // },
+      signup: {
+        onClick: () => {
+          renderDOM("signup");
+        },
+      },
       // profile: {
       //   onClick: () => {
       //     render('profile')

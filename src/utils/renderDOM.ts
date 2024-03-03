@@ -1,13 +1,14 @@
 import Home from "../_pages/Home";
 import Component from "./component";
 import { Login } from "../_pages/Login";
+import {SignUp} from "../_pages/SignUp";
 
 type TRoutes = Record<string, new (...args: any[]) => Component<any>>;
 
 export const ROUTES: TRoutes = {
   home: Home,
   login: Login,
-
+  signup: SignUp,
   // Другие маршруты
   // signup: SignUp,
   // profile: Profile,
@@ -31,7 +32,6 @@ export const renderDOM = (name: keyof typeof ROUTES, query: string = "#root") =>
   const Page = ROUTES[name];
   const page = new Page();
 
-  console.log(page);
   root.append(page.getContent()!);
 
   page.dispatchComponentDidMount();

@@ -1,7 +1,7 @@
 import Component from "../../utils/component";
 
 import h1 from "./h1.hbs";
-import h2 from "./h3.hbs";
+import h2 from "./h2.hbs";
 import h3 from "./h3.hbs";
 
 import "./title.scss";
@@ -22,6 +22,7 @@ export class Title extends Component {
   }
 
   render() {
+    console.log(this.props.tag)
     switch (this.props.tag) {
       case "h1":
         return this.compile(h1, this.props);
