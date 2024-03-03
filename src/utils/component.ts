@@ -37,7 +37,6 @@ class Component<Props extends Record<string, any> = any> {
 
     this.children = children;
 
-    console.log(children);
     // this._meta = {
     //   tag,
     //   props,
@@ -75,9 +74,9 @@ class Component<Props extends Record<string, any> = any> {
   }
 
   // private _createResources() {
-  //   const { tag } = this._meta;
+  //   // const { tag } = this._meta;
   //
-  //   this._element = this.createDocumentElement(tag);
+  //   this._element = this.createDocumentElement("div");
   // }
   public init() {
     // this._createResources();
@@ -133,20 +132,26 @@ class Component<Props extends Record<string, any> = any> {
   private _render(): void {
     const block = this.render();
     this._removeEvents();
+
+    const newElement = block.firstElementChild as HTMLElement;
+
     if (this._element) {
-      this._element.innerHTML = "";
-      this._element.appendChild(block);
+      this._element.replaceWith(newElement);
     } else {
+      console.error("нет блока для _render");
       // TODO протестить
-      this._element = block;
+      // this._element = new HTMLElement();
+      // this._element.replaceWith(newElement);
     }
+
+    this._element = newElement;
 
     this._addEvents();
   }
 
-  public render(): HTMLElement {
+  public render(): DocumentFragment {
     // Переопределяется пользователем. Необходимо вернуть разметку
-    return this.createDocumentElement("template");
+    return new DocumentFragment();
   }
 
   protected compile(template: (context: unknown) => string, context: any) {
@@ -165,6 +170,7 @@ class Component<Props extends Record<string, any> = any> {
     return temp.content;
   }
 
+  // реализцаия для текстовых шаблонов (.hbs?raw)
   // public compile(template: string | unknown, props: Props) {
   //   // TODO сейчас неверная типизация фрагмента
   //   const propsAndStubs: Props = { ...props };
@@ -228,12 +234,12 @@ class Component<Props extends Record<string, any> = any> {
     });
   }
 
-  private createDocumentElement(tag: string): HTMLElement | HTMLTemplateElement {
-    // TODO сделать метод, который через фрагменты в цикле создаёт сразу несколько блоков
-    const element = document.createElement(tag);
-    element.setAttribute("data-id", this.id);
-    return element;
-  }
+  // private createDocumentElement(tag: string): HTMLElement | HTMLTemplateElement {
+  //   // TODO сделать метод, который через фрагменты в цикле создаёт сразу несколько блоков
+  //   const element = document.createElement(tag);
+  //   element.setAttribute("data-id", this.id);
+  //   return element;
+  // }
 }
 
 export default Component;

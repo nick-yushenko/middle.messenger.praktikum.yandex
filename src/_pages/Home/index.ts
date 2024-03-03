@@ -1,30 +1,19 @@
 import Component from "../../utils/component";
 
+import "./style.module.scss";
+
 import template from "./template.hbs";
 import { renderDOM } from "../../utils/renderDOM";
 
 export default class Home extends Component {
   constructor() {
     super({
-      // login: {
-      //   onClick: () => {
-      //     console.log("er");
-      //     renderDOM("login");
-      //     // render('login')
-      //   },
-      // },
       className: "homePage",
-      buttons: [
-        {
-          href: "",
-          text: "text",
-          events: {
-            click: () => {
-              renderDOM("login");
-            },
-          },
+      login: {
+        onClick: () => {
+          renderDOM("login");
         },
-      ],
+      },
       // signup: {
       //   onClick: () => {
       //     render('signup')
@@ -63,6 +52,7 @@ export default class Home extends Component {
     });
   }
   render() {
+    console.log(this);
     return this.compile(template, this.props);
   }
 }

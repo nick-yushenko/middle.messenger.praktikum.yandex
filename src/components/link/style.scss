@@ -1,0 +1,27 @@
+.link {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  padding: 0 10px;
+
+  min-height: 20px;
+
+  background-color: transparent;
+  color: var(--primary);
+
+  &:hover {
+    color: var(--primary_hover);
+  }
+  &:active {
+    color: var(--primary_active);
+  }
+
+
+
+}

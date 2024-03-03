@@ -1,13 +1,11 @@
 import Home from "../_pages/Home";
 import Component from "./component";
-import { Button } from "../components/button";
 import { Login } from "../_pages/Login";
 
 type TRoutes = Record<string, new (...args: any[]) => Component<any>>;
 
 export const ROUTES: TRoutes = {
   home: Home,
-  btn: Button,
   login: Login,
 
   // Другие маршруты
@@ -33,15 +31,16 @@ export const renderDOM = (name: keyof typeof ROUTES, query: string = "#root") =>
   const Page = ROUTES[name];
   const page = new Page();
 
+  console.log(page)
   root.append(page.getContent()!);
 
   page.dispatchComponentDidMount();
-  const btn = new Button({
-    text: "test",
-    child: new Button({ text: "work" }),
-  });
-
-  console.log(btn.getContent());
-  root.append(btn.getContent() as Node);
+  // const btn = new Button({
+  //   text: "test",
+  //   child: new Button({ text: "work" }),
+  // });
+  //
+  // console.log(btn.getContent());
+  // root.append(btn.getContent() as Node);
   return;
 };

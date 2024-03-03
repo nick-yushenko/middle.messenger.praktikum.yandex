@@ -1,8 +1,8 @@
 import Component from "../../utils/component";
 
-import h1 from "./h1.hbs?raw";
-import h2 from "./h3.hbs?raw";
-import h3 from "./h3.hbs?raw";
+import h1 from "./h1.hbs";
+import h2 from "./h3.hbs";
+import h3 from "./h3.hbs";
 
 import "./title.scss";
 

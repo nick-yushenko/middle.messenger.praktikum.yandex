@@ -1,18 +1,16 @@
-import Component from "../../utils/component";
-
 import template from "./template.hbs";
-
+import Component from "../../utils/component";
 import "./style.scss";
 
 interface TProps {
   className?: string;
-  text?: string;
-  href?: string;
+  href: string;
+  ref_name: string;
   onClick?: () => void;
-  child?: any;
+  event?: () => void;
 }
 
-export class Button extends Component {
+export class Link extends Component {
   constructor(props: TProps) {
     super({
       ...props,
@@ -21,7 +19,6 @@ export class Button extends Component {
       },
     });
   }
-
   render() {
     return this.compile(template, this.props);
   }

@@ -1,27 +1,23 @@
-import Component from "../../utils/component";
-
 import template from "./template.hbs";
-
+import Component from "../../utils/component";
 import "./style.scss";
 
 interface TProps {
   className?: string;
-  text?: string;
-  href?: string;
-  onClick?: () => void;
-  child?: any;
+  onScroll?: () => void;
+  event?: () => void;
+  children: Component;
 }
 
-export class Button extends Component {
+export class Scroll extends Component {
   constructor(props: TProps) {
     super({
       ...props,
       events: {
-        click: props.onClick,
+        scroll: props.onScroll,
       },
     });
   }
-
   render() {
     return this.compile(template, this.props);
   }

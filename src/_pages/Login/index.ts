@@ -1,41 +1,51 @@
-import template from "./template.hbs?raw";
+import template from "./template.hbs";
 import "./style.scss";
 import Component from "../../utils/component";
-import { renderDOM } from "../../utils/renderDOM";
+// import { renderDOM } from "../../utils/renderDOM";
+import { blurValidation, submitValidation } from "../../utils/validation";
 
 export class Login extends Component {
   constructor() {
     super({
       events: {
-        // blur: blurValidation,
-        // submit: submitValidation,
+        blur: blurValidation,
+        submit: (e: any) => {
+          alert("submi");
+
+          submitValidation(e);
+        },
+        cancel: () => {
+          alert("cancel");
+        },
       },
-      pageName: "Вход",
+      title: "Вход",
+      primaryBtnText: "Войти",
+      secondaryBtnText: "Создать аккаунт",
       buttons: {
         type: "submit",
         label: "Войти",
       },
-      ref: {
-        href: "",
-        onClick: () => {
-          renderDOM("signup");
-        },
-      },
+      // ref: {
+      //   href: "",
+      //   onClick: () => {
+      //     renderDOM("signup");
+      //   },
+      // },
 
-      inputs: [
-        {
-          type: "text",
-          value: "",
-          placeholder: "Пользователь",
-          name: "first_name",
-        },
-        {
-          type: "text",
-          value: "",
-          placeholder: "Пароль",
-          name: "password",
-        },
-      ],
+      // inputs: [
+      //   {
+      //     type: "text",
+      //     value: "",
+      //     placeholder: "Пользователь",
+      //     name: "first_name",
+      //   },
+      //   {
+      //     type: "text",
+      //     value: "",
+      //     placeholder: "Пароль",
+      //     name: "password",
+      //   },
+      // ],
     });
   }
 

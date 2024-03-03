@@ -1,21 +1,38 @@
-{{#each buttons}}
-  {{{Button
-    href=this.text
-    text="rt"
+{{#Scroll className=this.className }}
 
-  }}}
-{{/each}}
+  <nav>
+    {{{Title tag="h1" text="Pages:" }}}
 
-<div class={{className}}>
-  {{{ Button
-    href=this.text
-    text="rt"
-  }}}
-</div>
-<!--<a href="/src/pages/profile/index.html">Profile</a>-->
-<!--<a href="/src/pages/editProfile/index.html">EditProfile</a>-->
-<!--<a href="/src/pages/editPassword/index.html">EditPassword</a>-->
-<!--<a href="/src/pages/login/index.html">Login</a>-->
-<!--<a href="/src/pages/signup/index.html">Sign up</a>-->
-<!--<a href="/src/pages/error/404/index.html">404 page</a>-->
-<!--<a href="/src/pages/error/500/index.html">5** page</a>-->
+    <ul>
+      <li>
+        {{{Link ref_name="Login" type="button" onClick=this.login.onClick}}}
+      </li>
+      <li>
+        {{{Link ref_name="Signup" type="button" onClick=this.signup.onClick}}}
+      </li>
+      <li>
+        {{{Link ref_name="Chat" type="button" onClick=this.chat.onClick}}}
+      </li>
+      <li>
+        {{{Link ref_name="Profile" type="button" onClick=this.profile.onClick}}}
+      </li>
+      <li>
+        {{{Link ref_name="Settings" type="button" onClick=this.settings.onClick}}}
+      </li>
+      <li>
+        {{{Link
+          ref_name="ChangePassword"
+          type="button"
+          onClick=this.changePass.onClick
+        }}}
+      </li>
+      <li>
+        {{{Link ref_name="Page404" type="button" onClick=this.page404.onClick}}}
+      </li>
+      <li>
+        {{{Link ref_name="Page500" type="button" onClick=this.page500.onClick}}}
+      </li>
+    </ul>
+  </nav>
+
+{{/Scroll}}
