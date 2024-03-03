@@ -10,7 +10,7 @@ import { Input } from "./components/input";
 import { Icon } from "./components/icon";
 import { Footer } from "./components/footer";
 import { Sidebar } from "./components/sidebar";
-import {Search} from "./components/search";
+import { Search } from "./components/search";
 
 registerComponent("Button", Button);
 registerComponent("Input", Input);

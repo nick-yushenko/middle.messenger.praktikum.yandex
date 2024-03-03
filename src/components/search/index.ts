@@ -10,8 +10,7 @@ type TProps = {
 
 export class Search extends Component {
   constructor() {
-
-    super({ });
+    super({});
   }
 
   render() {
