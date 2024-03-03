@@ -90,6 +90,7 @@ class Component<Props extends Record<string, any> = any> {
     });
   }
 
+  // чтобы не ругалась IDE на нигде не используемые параметры
   // @ts-ignore
   public componentDidMount(oldProps?: Props) {}
 
@@ -107,6 +108,7 @@ class Component<Props extends Record<string, any> = any> {
     this._eventBus?.().emit(Component.EVENTS.FLOW_RENDER);
   }
 
+  // чтобы не ругалась IDE на нигде не используемые параметры
   // @ts-ignore
   public componentDidUpdate(oldProps: Props, newProps: Props) {
     // Метод будет вызван непосредственно перед ререндером при изменении компонента
@@ -168,30 +170,6 @@ class Component<Props extends Record<string, any> = any> {
 
     return temp.content;
   }
-
-  // реализцаия для текстовых шаблонов (.hbs?raw)
-  // public compile(template: string | unknown, props: Props) {
-  //   // TODO сейчас неверная типизация фрагмента
-  //   const propsAndStubs: Props = { ...props };
-  //
-  //   Object.entries(this.children).forEach(([key, child]) => {
-  //     // @ts-ignore
-  //     propsAndStubs[key] = `<div data-id="${child.id}"></div>`;
-  //   });
-  //
-  //   const fragment = this.createDocumentElement("template");
-  //   const compiledTemplate = Handlebars.compile(template, propsAndStubs);
-  //   fragment.innerHTML = compiledTemplate(propsAndStubs);
-  //
-  //   Object.values(this.children).forEach(child => {
-  //     // @ts-ignore
-  //     const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
-  //     stub.replaceWith(child.getContent());
-  //   });
-  //
-  //   // @ts-ignore
-  //   return fragment.content;
-  // }
 
   private _addEvents(): void {
     const { events = {} } = this.props;
