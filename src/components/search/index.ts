@@ -5,12 +5,12 @@ import template from "./template.hbs";
 import "./style.scss";
 
 type TProps = {
-  onChange: (val: Event) => void;
+  onChange?: (val: Event) => void;
 };
 
 export class Search extends Component {
-  constructor() {
-    super({});
+  constructor(props: TProps) {
+    super({ ...props });
   }
 
   render() {
