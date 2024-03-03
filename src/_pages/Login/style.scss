@@ -1,0 +1,54 @@
+.buttons-container {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.auth {
+  width: 100%;
+  max-width: 350px;
+
+  min-height: 500px;
+
+  padding: 30px;
+
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin: 0 0 20px;
+    font-size: 40px;
+    font-weight: 500;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+
+    .btn[type="submit"] {
+      margin-top: 45px;
+    }
+  }
+
+  .actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-height: 500px) {
+  .auth {
+    min-height: auto;
+
+    .actions {
+      margin-top: 0;
+    }
+  }
+}

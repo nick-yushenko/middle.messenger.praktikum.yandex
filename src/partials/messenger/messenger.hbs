@@ -7,12 +7,14 @@
 
     <div class="messenger-content">
 
+        <div class="pls" id="tempRoot"></div>
         <div class="pls"> тут будет чат</div>
         <div class="pls"> тут будет чат</div>
         <div class="pls"> тут будет чат</div>
         <div class="pls"> тут будет чат</div>
-        <div class="pls"> тут будет чат</div>
-        <div class="pls"> тут будет чат</div>
+          {{#>tooltip/tooltip text="some text" }}
+            <div class="pls"> тут будет чат (tooltiped)</div>
+          {{/tooltip/tooltip}}
         <div class="pls"> тут будет чат</div>
 
     </div>
