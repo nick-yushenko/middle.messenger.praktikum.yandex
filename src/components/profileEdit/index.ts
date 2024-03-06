@@ -1,7 +1,7 @@
 import template from "./template.hbs";
-import Component from "../../utils/component";
 import "./style.scss";
-import { prepareFormData } from "../../utils/prepareFormData";
+import { prepareFormData } from "@/utils/prepareFormData";
+import Component from "@/utils/component";
 
 export class ProfileEdit extends Component {
   constructor() {

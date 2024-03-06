@@ -1,6 +1,6 @@
 import template from "./template.hbs";
-import Component from "../../utils/component";
 import "./style.scss";
+import Component from "@/utils/component";
 
 export class Messenger extends Component {
   constructor() {

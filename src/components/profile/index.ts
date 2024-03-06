@@ -1,9 +1,9 @@
 import template from "./template.hbs";
-import Component from "../../utils/component";
 import "./style.scss";
-import { renderDOM } from "../../utils/renderDOM";
+import { renderDOM } from "@/utils/renderDOM";
+import Component from "@/utils/component";
 
-export class Profile extends Component {
+export default class Profile extends Component {
   constructor() {
     super({
       actions: {

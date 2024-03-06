@@ -1,10 +1,9 @@
 import template from "./template.hbs";
 import "./style.scss";
-import Component from "../../utils/component";
-// import { renderDOM } from "../../utils/renderDOM";
-import { blurValidation } from "../../utils/validation";
-import { renderDOM } from "../../utils/renderDOM";
-import { prepareFormData } from "../../utils/prepareFormData";
+import { blurValidation } from "@/utils/validation";
+import { renderDOM } from "@/utils/renderDOM";
+import { prepareFormData } from "@/utils/prepareFormData";
+import Component from "@/utils/component";
 
 export class Login extends Component {
   isValid = false;

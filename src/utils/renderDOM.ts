@@ -1,14 +1,14 @@
-import Home from "../pages/Home";
-import Component from "./component";
-import { Login } from "../pages/Login";
-import { SignUp } from "../pages/SignUp";
-import Page404 from "../pages/Page404";
-import Page500 from "../pages/Page500";
-import Chat from "../pages/Chat";
-import Profile from "../pages/Profile";
-import PlaceholderPage from "../pages/PlaceholderPage";
-import Settings from "../pages/Settings";
-import Password from "../pages/Password";
+import Component from "@/utils/component";
+import { Login } from "@/pages/Login";
+import { SignUp } from "@/pages/SignUp";
+import Home from "@/pages/Home";
+import Profile from "@/components/profile";
+import Chat from "@/pages/Chat";
+import PlaceholderPage from "@/pages/PlaceholderPage";
+import Password from "@/pages/Password";
+import Settings from "@/pages/Settings";
+import Page500 from "@/pages/Page500";
+import Page404 from "@/pages/Page404";
 
 type TRoutes = Record<string, new (...args: any[]) => Component<any>>;
 
@@ -44,12 +44,5 @@ export const renderDOM = (
   root.append(page.getContent()!);
 
   page.dispatchComponentDidMount();
-  // const btn = new Button({
-  //   text: "test",
-  //   child: new Button({ text: "work" }),
-  // });
-  //
-  // console.log(btn.getContent());
-  // root.append(btn.getContent() as Node);
   return;
 };

@@ -1,8 +1,7 @@
-import Component from "../../utils/component";
-
 import template from "./template.hbs";
 
 import "./style.scss";
+import Component from "@/utils/component";
 
 type TProps = {
   onChange?: (val: Event) => void;

@@ -3,7 +3,10 @@ type ClassNamesFunction = (
   classesToAddOrRemove: string
 ) => string;
 
-export const addClassNames: ClassNamesFunction = (originalClasses, classesToAdd) => {
+export const addClassNames: ClassNamesFunction = (
+  originalClasses,
+  classesToAdd
+) => {
   const originalClassArray = originalClasses.split(" ");
   const classesToAddArray = classesToAdd.split(" ");
 

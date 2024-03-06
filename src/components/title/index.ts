@@ -1,10 +1,9 @@
-import Component from "../../utils/component";
-
 import h1 from "./h1.hbs";
 import h2 from "./h2.hbs";
 import h3 from "./h3.hbs";
 
 import "./title.scss";
+import Component from "@/utils/component";
 
 type TTitle = "h1" | "h2" | "h3";
 

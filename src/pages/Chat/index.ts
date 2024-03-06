@@ -1,8 +1,7 @@
-import Component from "../../utils/component";
-
 import "./style.scss";
 
 import template from "./template.hbs";
+import Component from "@/utils/component";
 
 export default class Chat extends Component {
   constructor() {

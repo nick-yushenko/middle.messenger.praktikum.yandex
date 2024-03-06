@@ -1,9 +1,9 @@
 import template from "./template.hbs";
 import footerButton from "./footerButton.hbs";
-import Component from "../../utils/component";
 import "./style.scss";
-import { renderDOM } from "../../utils/renderDOM";
-import { registerComponent } from "../../utils/registerComponent";
+import { renderDOM } from "@/utils/renderDOM";
+import { registerComponent } from "@/utils/registerComponent";
+import Component from "@/utils/component";
 
 export class Footer extends Component {
   constructor() {
