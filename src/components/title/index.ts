@@ -22,7 +22,6 @@ export class Title extends Component {
   }
 
   render() {
-    console.log(this.props.tag);
     switch (this.props.tag) {
       case "h1":
         return this.compile(h1, this.props);

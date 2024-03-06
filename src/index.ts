@@ -12,6 +12,10 @@ import { Footer } from "./components/footer";
 import { Sidebar } from "./components/sidebar";
 import { Search } from "./components/search";
 import { Messenger } from "./components/messenger";
+import { Profile } from "./components/profile";
+import { Placeholder } from "./components/placeholder";
+import { ProfileEdit } from "./components/profileEdit";
+import { PasswordEdit } from "./components/passwordEdit";
 
 registerComponent("Button", Button);
 registerComponent("Input", Input);
@@ -23,6 +27,10 @@ registerComponent("Footer", Footer);
 registerComponent("Sidebar", Sidebar);
 registerComponent("Search", Search);
 registerComponent("Messenger", Messenger);
+registerComponent("Profile", Profile);
+registerComponent("ProfileEdit", ProfileEdit);
+registerComponent("PasswordEdit", PasswordEdit);
+registerComponent("Placeholder", Placeholder);
 
 window.addEventListener("DOMContentLoaded", () => {
   renderDOM("home");

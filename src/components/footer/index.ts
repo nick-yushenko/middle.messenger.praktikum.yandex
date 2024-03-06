@@ -1,32 +1,42 @@
 import template from "./template.hbs";
+import footerButton from "./footerButton.hbs";
 import Component from "../../utils/component";
 import "./style.scss";
+import { renderDOM } from "../../utils/renderDOM";
+import { registerComponent } from "../../utils/registerComponent";
 
 export class Footer extends Component {
   constructor() {
+    registerComponent("FooterButton", FooterButton);
     super({
       actions: [
         {
           name: "Настройки",
           icon: "settings-icon",
-          click: () => {
-            console.log("to settings");
+          onClick: (e: Event) => {
+            if (e) {
+              renderDOM("settings");
+            }
           },
         },
 
         {
           name: "Профиль",
           icon: "profile-icon",
-          click: () => {
-            console.log("to profile");
+          onClick: (e: Event) => {
+            if (e) {
+              renderDOM("profile");
+            }
           },
         },
 
         {
           name: "Диалоги",
           icon: "chat-icon",
-          click: () => {
-            console.log("to chat");
+          onClick: (e: Event) => {
+            if (e) {
+              renderDOM("chat");
+            }
           },
         },
       ],
@@ -34,5 +44,24 @@ export class Footer extends Component {
   }
   render() {
     return this.compile(template, this.props);
+  }
+}
+
+type TFooterButton = {
+  name: string;
+  icon: string;
+  onClick: (e: Event) => void;
+};
+class FooterButton extends Component {
+  constructor(props: TFooterButton) {
+    super({
+      ...props,
+      events: {
+        click: props.onClick,
+      },
+    });
+  }
+  render() {
+    return this.compile(footerButton, this.props);
   }
 }

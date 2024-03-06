@@ -2,7 +2,7 @@ import template from "./template.hbs";
 import Component from "../../utils/component";
 import "./style.scss";
 
-export class Messenger extends Component {
+export class Placeholder extends Component {
   constructor() {
     super({
       onMessage: (e: Event) => {

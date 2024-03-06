@@ -7,7 +7,8 @@ export function registerComponent<Props extends Record<string, any>>(
   Element: new (props: Props) => Component<Props>
 ) {
   if (name in Handlebars.helpers) {
-    throw `Компонент ${name} ранее был зарегистрирован`;
+    return false;
+    // throw `Компонент ${name} ранее был зарегистрирован`;
   }
 
   Handlebars.registerHelper(

@@ -1,11 +1,6 @@
 .messenger {
   width: calc(100% - 310px);
 
-  &.placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
   &-content {
     overflow-y: auto;

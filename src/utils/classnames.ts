@@ -1,46 +1,36 @@
-type ClassValue = string | number | Record<string, boolean> | ClassArray;
+type ClassNamesFunction = (
+  originalClasses: string,
+  classesToAddOrRemove: string
+) => string;
 
-interface ClassArray extends Array<ClassValue> {}
+export const addClassNames: ClassNamesFunction = (originalClasses, classesToAdd) => {
+  const originalClassArray = originalClasses.split(" ");
+  const classesToAddArray = classesToAdd.split(" ");
 
-export const classNames = (...args: (ClassValue | undefined)[]): string => {
-  const classes: string[] = [];
+  // Удаляем дубликаты классов из массива, который нужно добавить
+  const uniqueClassesToAdd = classesToAddArray.filter(
+    className => !originalClassArray.includes(className)
+  );
 
-  for (const arg of args) {
-    if (arg === undefined) {
-      continue;
-    }
+  // Объединяем исходные классы и уникальные классы для добавления
+  const newClasses = [...originalClassArray, ...uniqueClassesToAdd];
 
-    if (typeof arg === "string" || typeof arg === "number") {
-      classes.push(arg.toString());
-    } else if (Array.isArray(arg)) {
-      classes.push(classNames(...arg));
-    } else if (typeof arg === "object" && arg !== null) {
-      for (const [key, value] of Object.entries(arg)) {
-        if (value) {
-          classes.push(key);
-        }
-      }
-    }
-  }
-
-  return classes.join(" ");
+  // Объединяем массив классов в строку и возвращаем
+  return newClasses.join(" ");
 };
 
-export const removeClass = (
-  originalClasses: string | undefined,
-  ...classesToRemove: string[]
-): string => {
-  if (originalClasses === undefined) {
-    return "";
-  }
+export const removeClassNames: ClassNamesFunction = (
+  originalClasses,
+  classesToRemove
+) => {
+  const originalClassArray = originalClasses.split(" ");
+  const classesToRemoveArray = classesToRemove.split(" ");
 
-  const classArray = originalClasses.split(" ");
-  classesToRemove.forEach(classToRemove => {
-    const index = classArray.indexOf(classToRemove);
-    if (index !== -1) {
-      classArray.splice(index, 1);
-    }
-  });
+  // Фильтруем исходные классы, оставляя только те, которые не нужно удалить
+  const newClasses = originalClassArray.filter(
+    className => !classesToRemoveArray.includes(className)
+  );
 
-  return classArray.join(" ");
+  // Объединяем массив классов в строку и возвращаем
+  return newClasses.join(" ");
 };

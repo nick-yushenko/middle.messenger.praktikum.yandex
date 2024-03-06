@@ -116,7 +116,9 @@ class Component<Props extends Record<string, any> = any> {
   }
 
   public setProps(nextProps: Props): void {
-    if (!isEmpty(nextProps)) {
+    console.log(nextProps);
+    console.log(!isEmpty(nextProps));
+    if (isEmpty(nextProps)) {
       return;
     }
     const proxyProps = this._makePropsProxy(nextProps);
@@ -169,12 +171,9 @@ class Component<Props extends Record<string, any> = any> {
 
   private _addEvents(): void {
     const { events = {} } = this.props;
-
-    if (events && typeof events === "object")
-      Object.keys(events).forEach(eventName => {
-        const typedEvents = events as EventMap;
-        this._element?.addEventListener(eventName, typedEvents[eventName]);
-      });
+    Object.keys(events).forEach(eventName => {
+      this._element?.addEventListener(eventName, events[eventName], true);
+    });
   }
   _removeEvents() {
     const { events = {} } = this.props;
