@@ -35,50 +35,54 @@ interface Options {
 type OptionsWithoutMethod = Omit<Options, "method">;
 // Этот тип эквивалентен следующему:
 // type OptionsWithoutMethod = { data?: any };
+type HTTPMethod = (
+  url: string,
+  options?: OptionsWithoutMethod
+) => Promise<unknown>;
 
 export class HTTPTransport {
-  get(
-    url: string,
-    options: OptionsWithoutMethod = {} as OptionsWithoutMethod
-  ): Promise<XMLHttpRequest> {
+  get: HTTPMethod = (
+    url,
+    options = {} as OptionsWithoutMethod
+  ): Promise<XMLHttpRequest> => {
     if (options.data) {
       url += queryStringify(options.data);
     }
     return this.request(url, { ...options, method: METHODS.GET });
-  }
+  };
 
-  put(
-    url: string,
-    options: OptionsWithoutMethod = {} as OptionsWithoutMethod
-  ): Promise<XMLHttpRequest> {
+  put: HTTPMethod = (
+    url,
+    options = {} as OptionsWithoutMethod
+  ): Promise<XMLHttpRequest> => {
     return this.request(
       url,
       { ...options, method: METHODS.PUT },
       options.timeout
     );
-  }
+  };
 
-  post(
-    url: string,
-    options: OptionsWithoutMethod = {} as OptionsWithoutMethod
-  ): Promise<XMLHttpRequest> {
+  post: HTTPMethod = (
+    url,
+    options = {} as OptionsWithoutMethod
+  ): Promise<XMLHttpRequest> => {
     return this.request(
       url,
       { ...options, method: METHODS.POST },
       options.timeout
     );
-  }
+  };
 
-  delete(
-    url: string,
-    options: OptionsWithoutMethod = {} as OptionsWithoutMethod
-  ): Promise<XMLHttpRequest> {
+  delete: HTTPMethod = (
+    url,
+    options = {} as OptionsWithoutMethod
+  ): Promise<XMLHttpRequest> => {
     return this.request(
       url,
       { ...options, method: METHODS.DELETE },
       options.timeout
     );
-  }
+  };
 
   request(
     url: string,
