@@ -1,0 +1,34 @@
+{{#Scroll className="padding center" }}
+
+  <div class="auth">
+
+    <form>
+      {{{Title tag="h2" text=this.title className="center" }}}
+
+
+      {{#each inputs}}
+        {{{Input
+          hint=this.hint
+          type=this.type
+          value=this.value
+          name=this.name
+          tabIndex=this.tabIndex
+          onBlur=this.events.blur
+          onChange=this.onChange
+          autocomplete=this.autocomplete
+        }}}
+      {{/each}}
+
+      <div class="actions">
+        {{{Button className="fluid" type="submit" text=primaryBtnText onClick=this.events.submit}}}
+
+        {{{Link className="light fluid" ref_name=secondaryBtnText onClick=this.events.cancel}}}
+      </div>
+    </form>
+  </div>
+
+
+{{/Scroll}}
+
+
+

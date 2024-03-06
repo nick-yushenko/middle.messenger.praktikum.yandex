@@ -1,0 +1,34 @@
+<div class="messenger">
+
+  <div class="head">
+    <span>тут будет шапка чата</span>
+  </div>
+
+  <div class="messenger-content">
+
+    <div class="pls" id="tempRoot"></div>
+    <div class="pls"> тут будет чат</div>
+    <div class="pls"> тут будет чат</div>
+    <div class="pls"> тут будет чат</div>
+    <div class="pls"> тут будет чат</div>
+
+    <div class="pls"> тут будет чат (TODO - tooltiped)</div>
+    <div class="pls"> тут будет чат</div>
+
+  </div>
+
+  <form class="messenger-footer" onsubmit={{this.onSend}}>
+    <div class="messenger-input">
+      <input type="text" name="message"
+             autocomplete="off"
+             onchange={{this.onMessage}}
+             onblur={{this.onBlur}} >
+    </div>
+
+    <label class="messenger-submit">
+      <input type="submit">
+      <span> > </span>
+    </label>
+  </form>
+
+</div>

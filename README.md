@@ -17,5 +17,5 @@ npm run dev
 
 локальный запуск проекта после сборки:
 ```
-node server.js
+npm run start
 ```

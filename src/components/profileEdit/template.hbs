@@ -1,0 +1,39 @@
+<div class="messenger profile">
+
+  <form class="profile-info">
+
+    <label class="avatar">
+      {{{Input className="file" type="file" name="avatar" tabIndex="-1" }}}
+
+      <div class="placeholder">
+        {{{Icon name="img-icon"  width=40 height=40}}}
+
+      </div>
+
+      <span class="change">
+                Поменять <br> аватар
+            </span>
+    </label>
+    <span class="username">Джон Уик</span>
+
+    <div class="profile-data editable">
+      {{#each inputs}}
+        {{{Input
+          hint=this.hint
+          type=this.type
+          value=this.value
+          name=this.name
+          tabIndex=this.tabIndex
+          onBlur=this.events.blur
+          onChange=this.onChange
+          autocomplete=this.autocomplete
+        }}}
+      {{/each}}
+    </div>
+
+    <div class="profile-actions">
+      {{{Button className="fluid" type="submit" text="Сохранить"  onClick=this.onSubmit}}}
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,17 @@
+
+<div class="input {{className}}">
+  <input type={{type}} name={{name}}
+    {{#if hint}}
+         placeholder="{{hint}}" {{/if}}
+    {{#if autocomplete}}
+         autocomplete="{{autocomplete}}" {{/if}}
+    {{#if value}}
+         value="{{value}}" {{/if}}
+    {{#if onChange}}
+         onchange={{onChange}} {{/if}}
+    {{#if onFocus}}
+         onfocus={{onFocus}} {{/if}}
+    {{#if onblur}}
+         onchange={{onBlur}} {{/if}}
+  >
+</div>
